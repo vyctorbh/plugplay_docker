@@ -1,0 +1,13 @@
+version: "3"
+services:
+    api:
+        image: kurumin/plugplay
+        ports:
+         - 5678:5678
+    gui:
+        build: gui-container/
+        ports:
+         - 8080:8080
+        links:
+         - api:apiserver
+
